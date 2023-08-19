@@ -51,13 +51,29 @@ int find_min(std::vector<int>::iterator start, std::vector<int>::iterator end ) 
     return (0);
 }
 
+int Span::longestSpan() {
+    
+    int max = -2147483648;
+    sort(this->arr.begin(), this->arr.end());
+    for (std::vector<int>::iterator it = this->arr.begin(); it != this->arr.end() - 1; it++)
+    {
+        if(*(it + 1) - *it > max)
+            max = *(it + 1) - *it;
+    }
+    std::cout << "max: " << max << std::endl;
+    return (0);
+}
+
 int Span::shortestSpan() {
     
-    for (std::vector<int>::iterator it = this->arr.begin(); it != this->arr.end(); it++)
+    int min = 2147483647;
+    sort(this->arr.begin(), this->arr.end());
+    for (std::vector<int>::iterator it = this->arr.begin(); it != this->arr.end() - 1; it++)
     {
-        find_min(it, this->arr.end());
+        if(*(it + 1) - *it < min)
+            min = *(it + 1) - *it;
     }
-    std::cout << "min: " << *(this->arr.begin() + 1) - *(this->arr.begin()) << std::endl;
+    std::cout << "min: " << min << std::endl;
     return (0);
 }
 

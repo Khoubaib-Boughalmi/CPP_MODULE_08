@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 // template <unsigned int _N>
 class Span
@@ -19,6 +20,7 @@ class Span
         void addNumber(int value);
         void displayList(void);
         int shortestSpan();
+        int longestSpan();
         ~Span();
 };
 

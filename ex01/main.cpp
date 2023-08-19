@@ -19,7 +19,6 @@ int main()
     spn.displayList();
     std::cout << "--------------------------\n";
     spn.shortestSpan();
-    spn.displayList();
-    // spn.addNumber(1);
+    spn.longestSpan();
     return (0);
 }
