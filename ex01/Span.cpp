@@ -31,7 +31,7 @@ void Span::addNumber(int value) {
 }
 
 void Span::addNumberRange(std::vector<int> &values) {
-    if(values.size() + this->_Size > this->_MaxSize - 1)
+    if(values.size() + this->_Size > this->_MaxSize)
         throw std::exception();
     this->_Size += values.size();
     this->arr.insert(this->arr.end(), values.begin(), values.end());
