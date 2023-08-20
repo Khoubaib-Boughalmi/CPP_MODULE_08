@@ -30,6 +30,13 @@ void Span::addNumber(int value) {
     this->arr.push_back(value);
 }
 
+void Span::addNumberRange(std::vector<int> &values) {
+    if(values.size() + this->_Size > this->_MaxSize - 1)
+        throw std::exception();
+    this->_Size += values.size();
+    this->arr.insert(this->arr.end(), values.begin(), values.end());
+}
+
 void Span::displayList() {
     for (std::vector<int>::iterator it = this->arr.begin(); it != this->arr.end(); it++)
     {
@@ -52,14 +59,16 @@ int find_min(std::vector<int>::iterator start, std::vector<int>::iterator end ) 
 }
 
 int Span::longestSpan() {
-    
+    if(this->_Size < 2)
+        throw std::exception();
     sort(this->arr.begin(), this->arr.end());
     std::cout << "max: " << *(this->arr.end() - 1) - *(this->arr.begin()) << std::endl;
     return (0);
 }
 
 int Span::shortestSpan() {
-    
+    if(this->_Size < 2)
+        throw std::exception();
     int min = 2147483647;
     sort(this->arr.begin(), this->arr.end());
     for (std::vector<int>::iterator it = this->arr.begin(); it != this->arr.end() - 1; it++)

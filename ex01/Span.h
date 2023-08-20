@@ -21,6 +21,7 @@ class Span
         void displayList(void);
         int shortestSpan();
         int longestSpan();
+        void addNumberRange(std::vector<int> &values);
         ~Span();
 };
 
