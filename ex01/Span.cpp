@@ -53,14 +53,8 @@ int find_min(std::vector<int>::iterator start, std::vector<int>::iterator end ) 
 
 int Span::longestSpan() {
     
-    int max = -2147483648;
     sort(this->arr.begin(), this->arr.end());
-    for (std::vector<int>::iterator it = this->arr.begin(); it != this->arr.end() - 1; it++)
-    {
-        if(*(it + 1) - *it > max)
-            max = *(it + 1) - *it;
-    }
-    std::cout << "max: " << max << std::endl;
+    std::cout << "max: " << *(this->arr.end() - 1) - *(this->arr.begin()) << std::endl;
     return (0);
 }
 
