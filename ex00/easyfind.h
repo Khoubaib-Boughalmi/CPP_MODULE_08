@@ -3,15 +3,15 @@
 
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 template<typename T>
 bool easyfind(T &conatiner, int val) {
-    for (typename T::iterator it = conatiner.begin(); it != conatiner.end(); it++)
-    {
-        if(*it == val)
-            return (1);
-    }
-    return (0);
+    typename T::iterator it;
+    it = std::find(conatiner.begin(), conatiner.end(), val);
+    if(it == conatiner.end())
+        return (0);
+    return (1);
 }
 
 #endif
