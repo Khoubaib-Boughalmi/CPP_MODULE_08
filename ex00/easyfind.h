@@ -13,5 +13,4 @@ bool easyfind(T &conatiner, int val) {
         return (0);
     return (1);
 }
-
 #endif
