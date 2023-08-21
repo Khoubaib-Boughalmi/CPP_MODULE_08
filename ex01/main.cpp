@@ -2,13 +2,47 @@
 
 int main()
 {
+    // Span sp = Span(5);
+    // try
+    // {
+    //     sp.addNumber(6);
+    //     sp.addNumber(3);
+    //     sp.addNumber(17);
+    //     sp.addNumber(9);
+    //     sp.addNumber(11);
+    //     sp.displayList();
+    // }
+    // catch(const std::exception& e)
+    // {
+    //     std::cerr << e.what() << '\n';
+    //     return 0;
+    // }
+    
+    // try
+    // {
+    //     std::cout << sp.shortestSpan() << std::endl;
+    //     std::cout << sp.longestSpan() << std::endl;
+    // }
+    // catch(const std::exception& e)
+    // {
+    //     std::cerr << e.what() << '\n';
+    // }
+    // try
+    // {
+    //     std::cout << sp.longestSpan() << std::endl;
+    // }
+    // catch(const std::exception& e)
+    // {
+    //     std::cerr << e.what() << '\n';
+    // }
+    
     Span spn(10000);
     try
     {
         for (size_t i = 0; i < 5000; i++)
             spn.addNumber(i);
-        spn.shortestSpan();
-        spn.longestSpan();
+        std::cout << spn.shortestSpan() << std::endl;
+        std::cout << spn.longestSpan() << std::endl;
     }
     catch(const std::exception& e)
     {    
@@ -26,8 +60,8 @@ int main()
     try
     {
         spn.addNumberRange(rangeVec);
-        spn.shortestSpan();
-        spn.longestSpan();
+        std::cout << spn.shortestSpan() << std::endl;
+        std::cout << spn.longestSpan() << std::endl;
     }
     catch(const std::exception& e)
     {

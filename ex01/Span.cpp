@@ -24,14 +24,14 @@ const Span& Span::operator=(const Span &other) {
 }
 
 void Span::addNumber(int value) {
-    if(this->_Size > this->_MaxSize - 1)
+    if(this->_Size > this->_MaxSize - 1 || _MaxSize == 0)
         throw std::exception();
     this->_Size++;
     this->arr.push_back(value);
 }
 
 void Span::addNumberRange(std::vector<int> &values) {
-    if(values.size() + this->_Size > this->_MaxSize)
+    if(values.size() + this->_Size > this->_MaxSize || _MaxSize == 0)
         throw std::exception();
     this->_Size += values.size();
     this->arr.insert(this->arr.end(), values.begin(), values.end());
@@ -62,8 +62,7 @@ int Span::longestSpan() {
     if(this->_Size < 2)
         throw std::exception();
     sort(this->arr.begin(), this->arr.end());
-    std::cout << "max: " << *(this->arr.end() - 1) - *(this->arr.begin()) << std::endl;
-    return (0);
+    return (*(this->arr.end() - 1) - *(this->arr.begin()));
 }
 
 int Span::shortestSpan() {
@@ -76,8 +75,7 @@ int Span::shortestSpan() {
         if(*(it + 1) - *it < min)
             min = *(it + 1) - *it;
     }
-    std::cout << "min: " << min << std::endl;
-    return (0);
+    return (min);
 }
 
 Span::~Span() {
